@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Menu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <style>
+    .menu-item img {
+      max-width: 15%; 
+      display: block; 
+      margin: 0 auto; 
+    }
+  </style>
+  <style>
+    #menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; 
+    }
+  
+    .menu-item {
+      width: 48%; 
+      margin-bottom: 20px; 
+    }
+  
+    .menu-item img {
+      max-width: 100%;
+      display: block;
+      margin: 0 auto;
+    }
+  
+    /* Clear margins to ensure there is no extra spacing in columns*/
+    @media (max-width: 600px) {
+      .menu-item {
+        width: 100%;
+      }
+    }
+
+    .menu-item p {
+      text-align: center; 
+    }
+
+    .menu-item h3 {
+      margin-top: 10px; 
+      padding-left: 50px;
+    }
+
+    ul {
+      font-size: 20px;
+      padding: 20px;
+      text-align: center;
+    }
+
+  </style>
+  
+</head>
+<body>
+  <ul>
+     <li><a href="index.html">Start</a></li> 
+  </ul>
+  
+  <center><main id="gridly">
+    <h1>Healthy Restaurant Menu</h1>
+    <select id="filtered" title="Choose a data filter.">
+      <option value="" disabled selected>Filter Menu</option>
+      <option value="all">All</option>
+      <option value="vegetarian">Vegetarian</option>
+      <option value="vegan">Vegan</option>
+      
+    </select>
+
+    <div id="menu">
+      <!-- Menu content will be added here by JavaScript -->
+    </div>
+  </main></center>
+  <footer>
+    &copy;<span id="year"></span> | Restaurant Menu | Paulo André Alves 
+  </footer>
+  <script src="scripts/main.js"></script>
+  <script>
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+  </script>
+  <script src="scripts/script2.js"></script>
+  <script>
+    // This script dynamically adds menu items
+    var menuContainer = document.getElementById("menu");
+
+    function renderMenu(menuItems) {
+      menuContainer.innerHTML = ''; // Clears current menu content
+
+      menuItems.forEach(function(item) {
+        var menuItem = document.createElement("div");
+        menuItem.classList.add("menu-item");
+        
+        var itemName = document.createElement("h3");
+        itemName.textContent = item.name;
+        
+        var itemPrice = document.createElement("p");
+        itemPrice.textContent = "Price: $" + item.price.toFixed(2);
+        
+        var itemImage = document.createElement("img");
+        itemImage.src = "images/" + item.image; 
+        
+        menuItem.appendChild(itemName);
+        menuItem.appendChild(itemPrice);
+        menuItem.appendChild(itemImage);
+        
+        menuContainer.appendChild(menuItem);
+      });
+    }
+
+    var menuItems = [
+      {
+        "name": "Conchiglione",
+        "type": "vegetarian",
+        "price": 15.99,
+        "image": "Conchiglione.jpg"
+      },
+      {
+        "name": "Crazy Jack Fruit",
+        "type": "vegetarian",
+        "price": 13.99,
+        "image": "crazyjackfruit.jpg"
+      },
+      {
+        "name": "Egg Plant Lasagna",
+        "type": "vegetarian",
+        "price": 17.00,
+        "image": "eggplantlasagna.jpg"
+      },
+      {
+        "name": "Mushroom Burger with barley",
+        "type": "vegetarian",
+        "price": 17.50,
+        "image": "mushroomburgerwithbarley.jpg"
+      },
+      {
+        "name": "Mushroom risotto",
+        "type": "vegetarian",
+        "price": 13.50,
+        "image": "Mushroomrisotto.jpg"
+      },
+      {
+        "name": "Wrap de Falafel",
+        "type": "vegetarian",
+        "price": 14.58,
+        "image": "Wrapdefalafel.jpg"
+      },
+      {
+        "name": "Vegetable Bowl",
+        "type": "vegan",
+        "price": 12.48,
+        "image": "bowl-de-legumes-com-creme-azedo.webp"
+      },
+      {
+        "name": "Vegan Pancake",
+        "type": "vegan",
+        "price": 10.00,
+        "image": "panqueca-vegan.webp"
+      },
+      {
+        "name": "Creamy Eggplant",
+        "type": "vegan",
+        "price": 9.00,
+        "image": "receita-berinjela-cremosa.webp"
+      },
+      {
+        "name": "Vegan Nuggests",
+        "type": "vegan",
+        "price": 11.00,
+        "image": "receitas-de-nuggets-vegano-00.webp"
+      },
+      {
+        "name": "chickpea and vegetable salad",
+        "type": "vegan",
+        "price": 15.00,
+        "image": "saladadegraodebicoelegumes.webp"
+      },
+      {
+        "name": "Vegan sanduiche",
+        "type": "vegan",
+        "price": 7.00,
+        "image": "sanduiche-vegano.webp"
+      },
+         
+    ];
+
+    renderMenu(menuItems);
+
+    var selectElement = document.getElementById('filtered');
+    selectElement.addEventListener('change', function() {
+      var filter = this.value;
+      var filteredItems;
+
+      if (filter === 'all') {
+        filteredItems = menuItems;
+      } else {
+        filteredItems = menuItems.filter(function(item) {
+          return item.type === filter;
+        });
+      }
+
+      
+      renderMenu(filteredItems);
+    });
+  </script>
+  
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+[
+  {
+    "name": "Conchiglione",
+    "type": "vegetarian",
+    "price": 15.99,
+    "image": "Conchiglione.jpg"
+  },
+  {
+    "name": "Crazy Jackfruit Burger",
+    "type": "vegetarian",
+    "price": 12.99,
+    "image": "Crazy_Jackfruit_Burger.jpg"
+  },
+  {
+    "name": "Eggplant Lasagna",
+    "type": "vegetarian",
+    "price": 14.99,
+    "image": "Eggplant_Lasagna.jpg"
+  },
+  {
+    "name": "Mushroom Burger with Barley",
+    "type": "vegetarian",
+    "price": 13.99,
+    "image": "Mushroom_Burger_with_Barley.jpg"
+  },
+  {
+    "name": "Mushroom Risotto",
+    "type": "vegetarian",
+    "price": 16.99,
+    "image": "Mushroom_Risotto.jpg"
+  },
+  {
+    "name": "Wrap de Falafel",
+    "type": "vegetarian",
+    "price": 11.99,
+    "image": "Wrap_de_Falafel.jpg"
+  },
+
+  {
+    "name": "Vegetable Bowl",
+    "type": "vegan",
+    "price": 12.48,
+    "image": "bowl-de-legumes-com-creme-azedo.webp"
+  },
+  {
+    "name": "Vegan Pancake",
+    "type": "vegan",
+    "price": 10.00,
+    "image": "panqueca-vegan.webp"
+  },
+  {
+    "name": "Creamy Eggplant",
+    "type": "vegan",
+    "price": 9.00,
+    "image": "receita-berinjela-cremosa.webp"
+  },
+  {
+    "name": "Vegan Nuggests",
+    "type": "vegan",
+    "price": 11.00,
+    "image": "receitas-de-nuggets-vegano-00.webp"
+  },
+  {
+    "name": "chickpea and vegetable salad",
+    "type": "vegan",
+    "price": 15.00,
+    "image": "chickpeaandvegetablesalad.webp"
+  },
+  {
+    "name": "Vegan sanduiche",
+    "type": "vegan",
+    "price": 7.00,
+    "image": "sanduiche-vegano.webp"
+  },
+
+  {
+    "name": "Rice with knoa",
+    "type": "Gluten-Free",
+    "price": 12.80,
+    "image": "arrozekinoa.jpg"
+  },
+  {
+    "name": "mini cakes",
+    "type": "Gluten-Free",
+    "price": 4.80,
+    "image": "Bolinhos.png"
+  },
+  {
+    "name": "Chocolate",
+    "type": "Gluten-Free",
+    "price": 6.20,
+    "image": "chocolate.jpg"
+  },
+  {
+    "name": "Cookies",
+    "type": "Gluten-Free",
+    "price": 9.00,
+    "image": "cookies.jpg"
+  },
+  {
+    "name": "Gluten free Burger",
+    "type": "Gluten-Free",
+    "price": 12.00,
+    "image": "hamburguerdesign_sem_nome.webp"
+  },
+  {
+    "name": "Special Gluten Free salad",
+    "type": "Gluten-Free",
+    "price": 15.00,
+    "image": "salad.webp"
+  }
+
+
+]
